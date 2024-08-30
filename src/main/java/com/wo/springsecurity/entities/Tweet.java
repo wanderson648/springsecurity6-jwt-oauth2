@@ -15,7 +15,9 @@ public class Tweet implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long tweetId;
 
-    private String user;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     private String content;
 
@@ -30,11 +32,11 @@ public class Tweet implements Serializable {
         this.tweetId = tweetId;
     }
 
-    public String getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(User user) {
         this.user = user;
     }
 
