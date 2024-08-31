@@ -63,7 +63,7 @@ public class CreateTweetController {
         tweet.setContent(dto.content());
 
         tweetRepository.save(tweet);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @DeleteMapping("/tweets/{id}")

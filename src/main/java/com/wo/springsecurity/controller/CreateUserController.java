@@ -54,7 +54,7 @@ public class CreateUserController {
 
       userRepository.save(user);
 
-      return ResponseEntity.ok().build();
+      return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping("/users")
